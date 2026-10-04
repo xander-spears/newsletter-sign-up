@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("/assets/fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Roboto Bold";
+  color: hsl(234, 29%, 20%);
+}
+
+body {
+  font-family: "Roboto";
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.form-module {
+  background-color: white;
+  max-width: 750px;
+}
+
+@media (min-width: 650px) {
+  body {
+    padding: 24px;
+    background-color: hsl(235, 18%, 26%);
+  }
+
+  .form-module {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+    padding: 24px;
+    gap: 24px;
+    place-self: center;
+  }
+
+  .form-module .content {
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+  }
+
+  body.is_subscribed .form-module {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    max-width: 410px;
+    padding: 32px;
+    margin: 16px;
+  }
+}
+
+.form-module img {
+  margin-inline: auto;
+  width: 100%;
+}
+
+.form-module .content {
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.form-module .content h1 {
+  font-family: "Roboto Bold";
+  color: hsl(234, 29%, 20%);
+}
+
+.form-module .content p {
+  color: hsl(0, 0%, 40%);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.bullets li {
+  display: grid;
+  grid-template-columns: 21px auto;
+  gap: 12px;
+  color: hsl(0, 0%, 40%);
+}
+
+.bullets li::before {
+  content: url(/assets/images/icon-list.svg);
+}
+
+input {
+  padding: 16px 16px;
+  border-radius: 8px;
+  font-family: "Roboto";
+  border: 1px solid hsl(0, 0%, 79%);
+}
+
+input::placeholder {
+  color: hsl(0, 0%, 79%);
+}
+
+.form-group.has-error input {
+  border: 1px solid red;
+  color: red;
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.form-group .error {
+  text-align: end;
+  color: red;
+  display: none;
+}
+
+.form-group.has-error .error {
+  display: block;
+}
+
+.form-group.with-error-field {
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-group.with-error-field input {
+  grid-column: 1 / -1;
+}
+
+button {
+  background-color: hsl(234, 29%, 20%);
+  color: white;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+button:hover,
+button:focus-visible {
+  background: linear-gradient(-90deg, hsl(4, 100%, 67%), hsl(343, 100%, 67%));
+  box-shadow: 0px 8px 16px hsla(0, 93%, 48%, 0.343);
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.message {
+  gap: 16px;
+  display: none;
+}
+
+.success-img {
+  width: 48px;
+}
+
+.bold-email {
+  font-family: "Roboto Bold";
+}
+
+body.is_subscribed .message {
+  display: grid;
+  gap: 16px;
+  align-self: center;
+  max-width: 360px;
+}
+
+body.is_subscribed picture {
+  display: none;
+}
+
+body.is_subscribed .content {
+  display: none;
+}
+
+body.is_subscribed .form-module {
+  display: grid;
+  padding: 24px;
+  align-items: center;
+}
+
+.message p {
+  color: hsl(0, 0%, 29%);
+}
